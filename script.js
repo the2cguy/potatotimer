@@ -1,3 +1,11 @@
+var bank = {
+    "pomodoros":0,
+    "money":0
+}
+if(localStorage.getItem("money")!=null){
+    bank["money"] = parseFloat(localStorage.getItem("money"))
+    $(".money").html('<i class="bi bi-cash-stack"></i> '+"$"+parseFloat(bank["money"]).toFixed(4));
+}
 var a;
 var mode = "time"
 var currentState = "none"
@@ -106,6 +114,11 @@ $(".startbtn").click(function (e) {
                     seconds = $("#preset").val().split("-")[1] * 60
                 }
                 seconds -= 1
+                if(currentState!="break"){
+                    bank["money"] += timetodollar(1)
+                    $(".money").html('<i class="bi bi-cash-stack"></i> '+"$"+bank["money"].toFixed(4));
+                    localStorage.setItem("money", bank["money"])
+                }
             }
         }, 1000 )
     }

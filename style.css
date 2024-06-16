@@ -70,11 +70,17 @@ main{
     font-style: italic;
     color: var(--fg1);
 }
-span{
+.mini{
     font-family: Lora;
     font-size: 1.8rem;
     color: var(--fg1);
     opacity: 0.5;
+}
+span{
+    font-family: Lora;
+    font-size: xx-large;
+    float: right;
+    margin-right: 1rem;
 }
 .btn{
     font-size: 1.6rem;
@@ -126,4 +132,31 @@ span{
     border-radius: 0.5rem;
     margin-left: 1rem;
     text-decoration: none;
+}
+.money{
+    color: #b8bb26;
+}
+.shop{
+    position: absolute;
+    top: 7rem;
+    left: 2rem;
+    background: var(--bg0h);
+    color: var(--fg1);
+    padding: 1rem;
+    font-family: Lora;
+    border-radius: 1rem;
+}
+.shop h1{
+    margin-bottom: 1rem;
+}
+.shop button{
+    padding: 0.5rem;
+    color: #b8bb26;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    background: none;
+    border: 5px solid #b8bb26;
+    font-family: Lora;
+    cursor: pointer;
+    font-size: larger;
 }
