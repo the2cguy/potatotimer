@@ -73,12 +73,12 @@ $(".startbtn").click(function (e) {
                 }
                 if(seconds < 1){
                     timerend()
-                    clearInterval(a);
-                    stp()
+                    currentState = "break"
+                    seconds = $("#preset").val().split("-")[1] * 60
                 }
                 seconds -= 0.1
             }
-        }, 100)
+        }, 100   )
     }
     else if(currentState == "main"){
         currentState = "pause"
