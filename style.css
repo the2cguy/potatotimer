@@ -6,11 +6,12 @@
     --fg: #ebdbb2;
     --fg0: #fbf1c7;
     --fg1: #ebdbb2;
+    --transition: 0.5s;
 }
 *{
     padding: 0;
     margin: 0;
-    transition: 0.2s;
+    transition: var(--transition);
 }
 header{
     padding: 1rem;
@@ -38,12 +39,8 @@ select{
     border-radius: 0.5rem;
     font-family: Lora;
 }
-select:hover{
-    border: 2px solid var(--fg);
-    background: none;
-    color: var(--fg0);
-}
 .intime{
+    cursor: pointer;
     background: #b8bb26;
     border: 2px solid transparent;
     color: #1d2021;
@@ -98,4 +95,24 @@ span{
     display: none;
     background: #cc412d;
     color: var(--fg);
+}
+.state{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.state button{
+    padding: 1rem 2rem;
+    font-family: Lora;
+    font-size: x-large;
+    border-radius: 2rem 0 0 2rem;
+    border: none;
+    background: var(--bg0h);
+    color: var(--fg);
+    font-weight: bold;
+    font-style: italic;
+}
+.break{
+    border-radius: 0 2rem 2rem 0 !important;
 }

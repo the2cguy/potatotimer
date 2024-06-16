@@ -3,10 +3,22 @@ var mode = "time"
 var currentState = "none"
 var paused = false
 var seconds = 0 
+var text = {
+    "start":"Start the Pomodoro!",
+    "stop":"Stop",
+    "pause":"Pause",
+    "resume":"Resume Pomodoro",
+    "skip_break":"Skip Break Time"
+}
+var config = {
+    "transition":0.5,
+}
+$(".startbtn").html('<i class="bi bi-play-fill"></i> '+text["start"]);
+$(".stop").html('<i class="bi bi-play-fill"></i> '+text["stop"]);
 function stp(){
     clearInterval(a);
     currentState = "none"
-    $(".startbtn").html('<i class="bi bi-play-fill"></i> Start Pomodoro!');
+    $(".startbtn").html('<i class="bi bi-play-fill"></i> '+text["start"]);
     if(mode=="money"){
         $(".main-clock").text("$0");
         $(".mini").text("00:00");
@@ -52,17 +64,33 @@ $(".intime").click(function (e) {
 $(".stop").click(function (e) { 
     e.preventDefault();
     stp();
+    $(".break").css("background", "var(--bg0h)");
+    $(".break").css("color", "var(--fg0)");
+    $(".work").css("background", "var(--bg0h)");
+    $(".work").css("color", "var(--fg0)");
 });
 $(".startbtn").click(function (e) { 
     if (currentState == "none"){
         $(".stop").show()
 
         currentState = "main"
-        $(".startbtn").html('<i class="bi bi-pause-fill"></i> Pause');
+        $(".startbtn").html('<i class="bi bi-pause-fill"></i> '+text["pause"]);
         clearInterval(a)
         e.preventDefault();
         seconds = $("#preset").val().split("-")[0] * 60
         a = setInterval(() => {
+            if (currentState == "main"){
+                $(".work").css("background", "var(--fg0)");
+                $(".work").css("color", "var(--bg0)");
+                $(".break").css("background", "var(--bg0h)");
+                $(".break").css("color", "var(--fg0)");
+            }
+            if (currentState == "break"){
+                $(".break").css("background", "var(--fg0)");
+                $(".break").css("color", "var(--bg0)");
+                $(".work").css("background", "var(--bg0h)");
+                $(".work").css("color", "var(--fg0)");
+            }
             if (currentState != "pause"){
                 if(mode == "time"){
                     $(".main-clock").text(getTimeTime());
@@ -74,20 +102,27 @@ $(".startbtn").click(function (e) {
                 if(seconds < 1){
                     timerend()
                     currentState = "break"
+                    $(".startbtn").html('<i class="bi bi-skip-end-fill"></i> '+text["skip_break"]);
                     seconds = $("#preset").val().split("-")[1] * 60
                 }
-                seconds -= 0.1
+                seconds -= 1
             }
-        }, 100   )
+        }, 100 )
     }
     else if(currentState == "main"){
         currentState = "pause"
         paused = true
-        $(".startbtn").html('<i class="bi bi-play-fill"></i> Resume Pomodoro!');
+        $(".startbtn").html('<i class="bi bi-play-fill"></i> '+text["resume"]);
     }
     else if(currentState == "pause"){
         currentState = "main";
         paused = false
-        $(".startbtn").html('<i class="bi bi-pause-fill"></i> Pause');
+        $(".startbtn").html('<i class="bi bi-pause-fill"></i> '+text["pause"]);
+    }
+    else if(currentState == "break"){
+        currentState = "main";
+        $(".startbtn").html('<i class="bi bi-pause-fill"></i> '+text["pause"]);
+        paused = false  
+        seconds = $("#preset").val().split("-")[0] * 60
     }
 });
