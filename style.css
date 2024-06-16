@@ -116,3 +116,14 @@ span{
 .break{
     border-radius: 0 2rem 2rem 0 !important;
 }
+.github{
+    padding: 0.5rem;
+    font-family: Lora;
+    font-size: larger;
+    background: var(--bg0h);
+    color: var(--fg);
+    border: none;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+    text-decoration: none;
+}
