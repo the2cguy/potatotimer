@@ -1,0 +1,84 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+:root{
+    --bg0: #282828;
+    --bg0h: #1d2021;
+    --bg1: #3c3836;
+    --fg: #ebdbb2;
+    --fg0: #fbf1c7;
+    --fg1: #ebdbb2;
+}
+*{
+    padding: 0;
+    margin: 0;
+    transition: 0.2s;
+}
+header{
+    padding: 1rem;
+}
+html, body{
+    background: var(--bg0);
+}
+.title{
+    font-family: 'Lora';
+    color: var(--fg1);
+    opacity: 1;
+    display: inline;
+}
+.title:hover{
+    opacity: 0.5;
+}
+select{
+    border: 2px solid transparent;
+    background: var(--fg1);
+    color: var(--bg0);
+    font-weight: bold;
+    font-size: large;
+    float: right;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-family: Lora;
+}
+select:hover{
+    border: 2px solid var(--fg);
+    background: none;
+    color: var(--fg0);
+}
+.intime{
+    background: #b8bb26;
+    border: 2px solid transparent;
+    color: #1d2021;
+    padding: 0.5rem;
+    font-family: Lora;
+    border-radius: 0.5rem;
+    font-size: large;
+    font-weight: bold;
+    margin-left: 1rem;
+    float: right;
+}
+.intime:hover{
+    border: 2px solid #b8bb26;
+    background: none;
+    color: #b8bb26;
+}
+.main-clock{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    font-family: Lora;
+    font-style: italic;
+    color: var(--fg1);
+}
+.startbtn{
+    position: absolute;
+    font-size: 1.6rem;
+    padding: 1rem;
+    border-radius: 100rem;
+    border: none;
+    bottom: 10%;
+    left: 50%;
+    font-family: Lora;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}

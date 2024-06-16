@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenPomo - Your Own Comfy Pomodoro.</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="moment.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="title">OpenPomo</h1>
+        <button class="intime">In Time</button>
+        <select name="" id="preset">
+            <option value="25-5">25/5 (Classic Pomodoro)</option>
+            <option value="30-5">30/5 (Extended)</option>
+            <option value="20-5">20/5 (ADHD)</option>
+            <option value="30-30">30/30 (Equal Pomodoro)</option>
+        </select>
+    </header>
+    <main>
+        <h1 class="main-clock">00:00</h1>
+    </main>
+    <button class="startbtn"><i class="bi bi-play-fill"></i> Start Pomodoro!</button>
+    <script src="script.js"></script>
+</body>
+</html>
