@@ -60,25 +60,42 @@ select:hover{
     background: none;
     color: #b8bb26;
 }
-.main-clock{
+main{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
+}
+.main-clock{
     font-size: 10rem;
     font-family: Lora;
     font-style: italic;
     color: var(--fg1);
 }
-.startbtn{
-    position: absolute;
+span{
+    font-family: Lora;
+    font-size: 1.8rem;
+    color: var(--fg1);
+    opacity: 0.5;
+}
+.btn{
     font-size: 1.6rem;
     padding: 1rem;
     border-radius: 100rem;
     border: none;
-    bottom: 10%;
-    left: 50%;
     font-family: Lora;
     cursor: pointer;
+    margin: 0rem 0.5rem;
+}
+.btns{
+    position: absolute;
+    bottom: 10%;
     transform: translate(-50%, -50%);
+    left: 50%;
+}
+.stop{
+    display: none;
+    background: #cc412d;
+    color: var(--fg);
 }
