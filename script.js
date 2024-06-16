@@ -107,7 +107,7 @@ $(".startbtn").click(function (e) {
                 }
                 seconds -= 1
             }
-        }, 100 )
+        }, 1000 )
     }
     else if(currentState == "main"){
         currentState = "pause"
